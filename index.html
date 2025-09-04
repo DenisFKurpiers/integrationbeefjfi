@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integration Bee FJFI</title>
+  <title>Integration Bee FJFI</title>¨
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -12,6 +13,8 @@
       color: #333;
       display: flex;
       justify-content: center;
+      font-family: "Open Sans", Arial, Helvetica, sans-serif;
+      line-height: 1.6;
     }
 
     .content {
@@ -23,10 +26,12 @@
       display: flex;
       gap: 2rem;
       align-items: center;
+      flex-wrap: wrap; 
     }
 
     .text {
       flex: 1;
+      min-width: 250px; 
     }
 
     .text h1 {
@@ -39,7 +44,7 @@
       font-size: 1.2rem;
       color: #666;
     }
-  
+
     .text p {
       line-height: 1.5;
     }
@@ -48,16 +53,30 @@
       max-width: 300px;
       width: 100%;
       border-radius: 8px;
+      height: auto; 
     }
 
+    
     @media (max-width: 700px) {
       .content {
         flex-direction: column;
         text-align: center;
+        padding: 1rem;
       }
+
       .poster {
         max-width: 100%;
+        margin: 0 auto;
       }
+    }
+
+    form input, form select, form textarea, form button {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    form button {
+      cursor: pointer;
     }
   </style>
 </head>
@@ -77,77 +96,76 @@
       <img src="images/integration_pic.jpeg" alt="Poster for Integration Bee" class="poster">
     </div>
 
-      <div class="content" style="flex: 1 1 100%;">
-    <div class="text">
-      <h1>Organizační informace</h1>
-      <p>
-        Soutěž je v podobě jednoho <strong>online kola</strong>, které se koná <strong>v pátek, 3.10.2025</strong> <br> 
-        a jednoho <strong>finálového kola</strong>, které proběhne <strong>v pátek, 10.10.2025</strong> v prostorách FJFI ČVUT.<br><br>
-        <strong>Online kolo</strong> proběhne formou online testu, který bude dostupný od 3.10.2025 00:00 do 3.10.2025 23:59.  <br> 
-        <strong>Vzorový řešený test</strong> s typovými příklady bude zveřejněn <a href="https://integrationbeefjfi.com/">zde</a> 1.9.2025.<br><br>
-        <strong>Finálové kolo</strong> proběhne formou živého klání v prostorách FJFI ČVUT.<br>
-        <strong>Seznam 16 úspěšných řešitelů, postupující do finále bude vyvěšen <a href="https://integrationbeefjfi.com/">zde</a> v neděli, 5.10.2025</strong> <br>
-      </p>
+    <div class="content" style="flex: 1 1 100%;">
+      <div class="text">
+        <h1>Organizační informace</h1>
+        <p>
+          Soutěž je v podobě jednoho <strong>online kola</strong>, které se koná <strong>v pátek, 3.10.2025</strong> <br> 
+          a jednoho <strong>finálového kola</strong>, které proběhne <strong>v pátek, 10.10.2025</strong> v prostorách FJFI ČVUT.<br><br>
+          <strong>Online kolo</strong> proběhne formou online testu, který bude dostupný od 3.10.2025 00:00 do 3.10.2025 23:59.  <br> 
+          <strong>Vzorový řešený test</strong> s typovými příklady bude zveřejněn <a href="https://integrationbeefjfi.com/">zde</a> 1.9.2025.<br><br>
+          <strong>Finálové kolo</strong> proběhne formou živého klání v prostorách FJFI ČVUT.<br>
+          <strong>Seznam 16 úspěšných řešitelů, postupující do finále bude vyvěšen <a href="https://integrationbeefjfi.com/">zde</a> v neděli, 5.10.2025</strong> <br>
+        </p>
+      </div>
     </div>
-  </div>
 
-  <div class="content" style="flex: 1 1 100%;">
-    <div class="text">
-      <h1>Online kolo</h1>
-      <p> 
-       Online kolo proběhne prostřednictvím google forms, kde bude k dispozici 20 příkladů z oblasti <strong> Riemannových integrálů</strong>. Na vyplnění testu bude k dispozici 30 minut, potom se google forms uzavře. 
-       <strong>Test nebude možné jakkoliv opakovat, psát znovu, nebo opravovat, a to ani v případě neúmyslného odhlášení z forms.</strong> Technické obtíže a stížnosti spojené s google forms nahlašovat na adresu kurpiden@cvut.cz   <br> 
-       <br>
-       Příklady se nebudou obtížnostně lišit od příkladů ze sbírky. Očekávaná odpověď je <strong>číslo</strong> viz definice Riemannova integrálu. 
-       Součástí odpovědi je i postup řešení, který se nehodnotí, ale je vyžadován. <strong> Odpověď v online kole bez postupu řešení nebude započítána.</strong>
-       Příklady budou seřazeny vzestupně podle obtížnosti, a všechny jsou hodnoceny stejně. Je tedy vhodné nezačínat zezadu. <br><br>
-      
-       Stále máte možnost ovlivnit průběh online kola! <a href="https://strawpoll.com/kogjROp51g6">Dotazník</a> 
-      </p>
+    <div class="content" style="flex: 1 1 100%;">
+      <div class="text">
+        <h1>Online kolo</h1>
+        <p> 
+         Online kolo proběhne prostřednictvím google forms, kde bude k dispozici 20 příkladů z oblasti <strong> Riemannových integrálů</strong>. Na vyplnění testu bude k dispozici 30 minut, potom se google forms uzavře. 
+         <strong>Test nebude možné jakkoliv opakovat, psát znovu, nebo opravovat, a to ani v případě neúmyslného odhlášení z forms.</strong> Technické obtíže a stížnosti spojené s google forms nahlašovat na adresu kurpiden@cvut.cz   <br> 
+         <br>
+         Příklady se nebudou obtížnostně lišit od příkladů ze sbírky. Očekávaná odpověď je <strong>číslo</strong> viz definice Riemannova integrálu. 
+         Součástí odpovědi je i postup řešení, který se nehodnotí, ale je vyžadován. <strong> Odpověď v online kole bez postupu řešení nebude započítána.</strong>
+         Příklady budou seřazeny vzestupně podle obtížnosti, a všechny jsou hodnoceny stejně. Je tedy vhodné nezačínat zezadu. <br><br>
+        
+         Stále máte možnost ovlivnit průběh online kola! <a href="https://strawpoll.com/kogjROp51g6">Dotazník</a> 
+        </p>
 
+      </div>
     </div>
-  </div>
 
-   <div class="content" style="flex: 1 1 100%;">
-    <div class="text">
-      <h1>Finálové kolo</h1>
-      <p>
-        <strong>Úspěšní řešitelé online kola obdrží pozvánku na finálové kolo emailem, kde závazně potvrdí svou účast.</strong>
-        Pokud se z jakéhokoliv důvodu řešitel nemůže dostavit, postupuje automaticky první řešitel „pod čarou“.
-        Průběh online kola bude modelován podle již existující <a href="https://www.youtube.com/watch?v=oR3lmIv7Ah8">MIT Integration Bee</a>.
-        Všechny možné úpravy a pravidla dostupné na této stránce 1.9.2025. 
-        <br><br>
-        <strong>Vašimi rozhodčími na prvním ročníku Integration Bee FJFI budou:</strong><br>
-        dozvíte se 1.9.2025<br>
-      </p>
+     <div class="content" style="flex: 1 1 100%;">
+      <div class="text">
+        <h1>Finálové kolo</h1>
+        <p>
+          <strong>Úspěšní řešitelé online kola obdrží pozvánku na finálové kolo emailem, kde závazně potvrdí svou účast.</strong>
+          Pokud se z jakéhokoliv důvodu řešitel nemůže dostavit, postupuje automaticky první řešitel „pod čarou“.
+          Průběh online kola bude modelován podle již existující <a href="https://www.youtube.com/watch?v=oR3lmIv7Ah8">MIT Integration Bee</a>.
+          Všechny možné úpravy a pravidla dostupné na této stránce 1.9.2025. 
+          <br><br>
+          <strong>Vašimi rozhodčími na prvním ročníku Integration Bee FJFI budou:</strong><br>
+          dozvíte se 1.9.2025<br>
+        </p>
+      </div>
     </div>
-  </div>
 
-  <div class="content" style="flex: 1 1 100%;">
-    <div class="text">
-      <h1>Ceny</h1>
-      Generálním partnerem soutěže je <a href="https://qminers.com/cs/">Qminers</a>, který zajistil jak hladký průběh soutěže, tak i hlavní ceny.
-      Dalšími sponzory jsou komerční firmy dlouhodobě spolupracující s FJFI <a href="https://advacam.com/">Advacam</a> a <a href="https://integrationbeefjfi.com/">Placeholder</a>,
-      kteří také nabízí ceny.<br><br>
-      <h2>Hlavní ceny:</h2>
-       Všechny následující ceny jsou určeny pro první tři místa a budou předány na konci finálového kola.<br>
-      <ul>
-        <li><strong>Zlatý integrál:</strong> Pohár s motivem zlatého integrálu, který bude předán vítězi soutěže.</li><br>
-        <li><strong>Stáž v Qminers:</strong> Jednodenní stáž v Qminers nabízí jedinečnou příležitost setkat se s klíčovými členy týmu, nahlédnout do světa kvantitativního investování a seznámit se s principy, na nichž stojí moderní algoritmický trading.</li><br>
-        <li><strong>Stáž ve vědeckém oddělení Advacam:</strong> Jednodenní stáž ve vědeckém oddělení ADVACAM nabízí vhled do špičkového výzkumu v oblasti detekce záření a aplikované fyziky na pomezí vědy a průmyslu.</li> <br>
-        <li><strong>Stáž v TBD:</strong> TBD</li> <br>
-        <li><strong>Finanční odměna a dárkový box:</strong> Finanční odměna a dárkový box zajištený sponzory soutěže.</li>
-      </ul>
-      <h2>Vedlejší ceny:</h2>
-      Následující ceny jsou určeny pro všechny účastníky finálového kola.<br>
-      <ul>
-        <li><strong>Oficiální merchandising:</strong> Trička, mikiny, tašky FJFI zajištěné SU FJFI.</li><br>
-        <li><strong>Populárně naučná četba:</strong> Matematické knihy doporučené KM FJFI </li><br>
-        <li><strong>Certifikát:</strong> Pamětní certifikát potvrzující účast ve finále a ocenění mimořádného výkonu v soutěži</li><br>
+    <div class="content" style="flex: 1 1 100%;">
+      <div class="text">
+        <h1>Ceny</h1>
+        Generálním partnerem soutěže je <a href="https://qminers.com/cs/">Qminers</a>, který zajistil jak hladký průběh soutěže, tak i hlavní ceny.
+        Dalšími sponzory jsou komerční firmy dlouhodobě spolupracující s FJFI <a href="https://advacam.com/">Advacam</a> a <a href="https://integrationbeefjfi.com/">Placeholder</a>,
+        kteří také nabízí ceny.<br><br>
+        <h2>Hlavní ceny:</h2>
+         Všechny následující ceny jsou určeny pro první tři místa a budou předány na konci finálového kola.<br>
+        <ul>
+          <li><strong>Zlatý integrál:</strong> Pohár s motivem zlatého integrálu, který bude předán vítězi soutěže.</li><br>
+          <li><strong>Stáž v Qminers:</strong> Jednodenní stáž v Qminers nabízí jedinečnou příležitost setkat se s klíčovými členy týmu, nahlédnout do světa kvantitativního investování a seznámit se s principy, na nichž stojí moderní algoritmický trading.</li><br>
+          <li><strong>Stáž ve vědeckém oddělení Advacam:</strong> Jednodenní stáž ve vědeckém oddělení ADVACAM nabízí vhled do špičkového výzkumu v oblasti detekce záření a aplikované fyziky na pomezí vědy a průmyslu.</li> <br>
+          <li><strong>Stáž v TBD:</strong> TBD</li> <br>
+          <li><strong>Finanční odměna a dárkový box:</strong> Finanční odměna a dárkový box zajištený sponzory soutěže.</li>
         </ul>
+        <h2>Vedlejší ceny:</h2>
+        Následující ceny jsou určeny pro všechny účastníky finálového kola.<br>
+        <ul>
+          <li><strong>Oficiální merchandising:</strong> Trička, mikiny, tašky FJFI zajištěné SU FJFI.</li><br>
+          <li><strong>Populárně naučná četba:</strong> Matematické knihy doporučené KM FJFI </li><br>
+          <li><strong>Certifikát:</strong> Pamětní certifikát potvrzující účast ve finále a ocenění mimořádného výkonu v soutěži</li><br>
+          </ul>
+      </div>
     </div>
-  </div>
-
 
     <form
       action="https://formspree.io/f/xgvzyarw"
@@ -159,22 +177,22 @@
       <div style="display: flex; flex-direction: column; gap: 1rem;">
         <label>
           Jméno:
-          <input type="text" name="name" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;">
+          <input type="text" name="name" required>
         </label>
 
         <label>
           Email:
-          <input type="email" name="email" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;">
+          <input type="email" name="email" required>
         </label>
 
         <label>
           Věk:
-          <input type="number" name="age" min="10" max="100" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;">
+          <input type="number" name="age" min="10" max="100" required>
         </label>
 
         <label>
           Status Studenta:
-          <select name="status" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;">
+          <select name="status" required>
             <option value="" disabled selected>-- vyberte --</option>
             <option value="highschool">Středoškolák</option>
             <option value="college">Vysokoškolák</option>
@@ -184,7 +202,7 @@
 
         <label>
           Zpráva (volitelné):
-          <textarea name="message" rows="4" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+          <textarea name="message" rows="4"></textarea>
         </label>
 
         <button type="submit" style="background-color: #003366; color: white; padding: 0.75rem; border: none; border-radius: 5px; cursor: pointer;">
@@ -195,3 +213,4 @@
 
   </div>
 </body>
+</html>
