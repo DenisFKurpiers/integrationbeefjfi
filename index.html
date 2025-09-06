@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integration Bee FJFI</title>¨
+  <title>Integration Bee FJFI</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -25,13 +25,7 @@
       color: #FFA000;
       text-decoration: underline;
     }
-    a:visited {
-      color: #FFA000;
-    }
 
-    a:active {
-      color: #FFA000;
-    }
     .content {
       max-width: 900px;
       min-width: 0;
@@ -71,34 +65,38 @@
       height: auto; 
       display: block;
       object-fit: contain;
-      maegin: 0 auto;
+      margin: 0 auto;
     }
 
-    .prizes-section h2,
-    .prizes-section h2 + p {
+    .prizes-section h1,
+    .prizes-section h2 {
       text-align: center;
     }
 
-    ul.prizes {
-      list-style: none;
-      padding: 0;
+    .internships-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
       margin: 1rem 0;
+      flex-wrap: wrap;
     }
 
-    ul.prizes li {
-      background: #f9f9f9;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-
-    ul.prizes li strong {
+    .internship-logo {
+      max-width: 120px;
+      height: auto;
       display: block;
-      margin-bottom: 0.3rem;
-      font-size: 1.05rem;
-      color: #000;
+      transition: transform 0.2s;
+      border-radius: 50%;
+    }
+
+    .internship-logo:hover {
+      transform: scale(1.1);
+    }
+
+    .prizes-section p {
+      text-align: center;
+      line-height: 1.5;
     }
 
     @media (max-width: 700px) {
@@ -113,14 +111,9 @@
         margin: 0 auto 1rem;
       }
 
-      .prizes li {
-        padding: 0.75rem; 
-      }
-
       .text p {
         margin-bottom: 1rem; 
       }
-
     }
 
     @media (max-width: 400px) {
@@ -129,24 +122,9 @@
         margin-bottom: 0.5rem; 
       }
 
-      .prizes-section h2,
-      .prizes-section h2 + p {
+      .prizes-section h2 {
         font-size: 1.1rem;     
         margin-bottom: 0.5rem;
-      }
-
-      .prizes li {
-        padding: 0.5rem;       
-        font-size: 0.95rem;    
-      }
-
-      form {
-        padding: 1rem;          
-      }
-
-      form button {
-        padding: 0.6rem;       
-        font-size: 0.95rem;
       }
     }
 
@@ -190,66 +168,36 @@
         </p>
       </div>
     </div>
-
-    <div class="content" style="flex: 1 1 100%;">
-      <div class="text">
-        <h1>Online kolo</h1>
-        <p> 
-         Online kolo proběhne prostřednictvím google forms, kde bude k dispozici 20 příkladů z oblasti <strong> Riemannových integrálů</strong>. Na vyplnění testu bude k dispozici 30 minut, potom se google forms uzavře. 
-         <strong>Test nebude možné jakkoliv opakovat, psát znovu, nebo opravovat, a to ani v případě neúmyslného odhlášení z forms.</strong> Technické obtíže a stížnosti spojené s google forms nahlašovat na adresu kurpiden@cvut.cz   <br> 
-         <br>
-         Příklady se nebudou obtížnostně lišit od příkladů ze sbírky. Očekávaná odpověď je <strong>číslo</strong> viz definice Riemannova integrálu. 
-         Součástí odpovědi je i postup řešení, který se nehodnotí, ale je vyžadován. <strong> Odpověď v online kole bez postupu řešení nebude započítána.</strong>
-         Příklady budou seřazeny vzestupně podle obtížnosti, a všechny jsou hodnoceny stejně. Je tedy vhodné nezačínat zezadu. <br><br>
-        
-         Stále máte možnost ovlivnit průběh online kola! <a href="https://strawpoll.com/kogjROp51g6">Dotazník</a> 
-        </p>
-
-      </div>
-    </div>
-
-     <div class="content" style="flex: 1 1 100%;">
-      <div class="text">
-        <h1>Finálové kolo</h1>
-        <p>
-          <strong>Úspěšní řešitelé online kola obdrží pozvánku na finálové kolo emailem, kde závazně potvrdí svou účast.</strong>
-          Pokud se z jakéhokoliv důvodu řešitel nemůže dostavit, postupuje automaticky první řešitel „pod čarou“.
-          Průběh online kola bude modelován podle již existující <a href="https://www.youtube.com/watch?v=oR3lmIv7Ah8">MIT Integration Bee</a>.
-          Všechny možné úpravy a pravidla dostupné <a href="https://integrationbeefjfi.com/">zde</a>
-          <br><br>
-          <strong>Vašimi rozhodčími na prvním ročníku Integration Bee FJFI budou:</strong><br>
-          dozvíte se 1.9.2025<br>
-        </p>
-      </div>
-    </div>
-
+    
     <div class="content prizes-section" style="flex: 1 1 100%;">
       <div class="text">
         <h1>Hlavní a vedlejší ceny</h1>
-        Generálním partnerem soutěže je <a href="https://qminers.com/cs/">Qminers</a>, který zajistil jak hladký průběh soutěže, tak i hlavní ceny.
-        Dalšími sponzory jsou komerční firmy dlouhodobě spolupracující s FJFI <a href="https://advacam.com/">Advacam</a> a <a href="https://integrationbeefjfi.com/">Placeholder</a>,
-        kteří také nabízí atraktivní ceny.
-        <br>
-        <h2>Hlavní ceny:</h2>
-        <p>Všechny následující ceny jsou určeny pro první tři místa a budou předány na konci finálového kola.</p>
-        <ul class="prizes">
-          <li><strong>Zlatý integrál:</strong> Pohár s motivem zlatého integrálu, který bude předán vítězi soutěže.</li>
-          <li><strong>Stáž v Qminers:</strong> Jednodenní stáž v Qminers nabízí jedinečnou příležitost setkat se s klíčovými členy týmu, nahlédnout do světa kvantitativního investování a seznámit se s principy, na nichž stojí moderní algoritmický trading.</li>
-          <li><strong>Stáž ve vědeckém oddělení Advacam:</strong> Jednodenní stáž ve vědeckém oddělení ADVACAM nabízí vhled do špičkového výzkumu v oblasti detekce záření a aplikované fyziky na pomezí vědy a průmyslu.</li>
-          <li><strong>Stáž v TBD:</strong> TBD</li>
-          <li><strong>Finanční odměna a dárkový box:</strong> Finanční odměna a dárkový box zajištěný sponzory soutěže.</li>
-          <br>
-        </ul>
-        <h2>Vedlejší ceny:</h2>
-        <p>Následující ceny jsou určeny pro všechny účastníky finálového kola.</p>
-        <ul class="prizes">
-          <li><strong>Oficiální merchandising:</strong> Trička, mikiny, tašky FJFI zajištěné SU FJFI.</li>
-          <li><strong>Populárně naučná četba:</strong> Matematické knihy doporučené KM FJFI</li>
-          <li><strong>Certifikát:</strong> Pamětní certifikát potvrzující účast ve finále a ocenění mimořádného výkonu v soutěži.</li>
-        </ul>
+        <p>
+          Generálním partnerem soutěže je <a href="https://qminers.com/cs/">Qminers</a>, který zajistil jak hladký průběh soutěže, tak i finanční podporu.
+          Dalšími sponzory jsou komerční firmy dlouhodobě spolupracující s FJFI <a href="https://advacam.com/">Advacam</a> a <a href="https://integrationbeefjfi.com/">Placeholder</a>,
+          kteří také věnovali atraktivní ceny pro vítěze.
+        </p>
+
+        <h2>Stáže</h2>
+        <p>Stáže jsou určeny pro první tři místa a budou předány na konci finálového kola.</p>
+        <div class="internships-logos">
+          <a href="https://qminers.com/cs/" target="_blank">
+            <img src="images/qminers-logo.png" alt="Qminers" class="internship-logo">
+          </a>
+          <a href="https://advacam.com/" target="_blank">
+            <img src="images/advacam-logo.png" alt="Advacam" class="internship-logo">
+          </a>
+          <a href="https://integrationbeefjfi.com/" target="_blank">
+            <img src="images/placeholder-logo.png" alt="Placeholder" class="internship-logo">
+          </a>
+        </div>
+
+        <p>
+          <strong>Další hlavní ceny:</strong> Pohár s motivem zlatého integrálu, finanční odměna a dárkový box zajištěný sponzory soutěže.<br>
+          <strong>Vedlejší ceny: </strong> Oficiální merchandising (trička, mikiny), populárně naučná četba, pamětní certifikát a další.
+        </p>
       </div>
     </div>
-
 
     <form
       action="https://formspree.io/f/xgvzyarw"
@@ -298,3 +246,5 @@
   </div>
 </body>
 </html>
+
+
