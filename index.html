@@ -57,7 +57,7 @@
 
     .text h2 {
       font-size: 1.2rem;
-      color: #666;
+      color: #000000;
     }
 
     .text p {
@@ -71,7 +71,33 @@
       height: auto; 
     }
 
-    
+    .prizes-section h2,
+    .prizes-section h2 + p {
+      text-align: center;
+    }
+
+    ul.prizes {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    ul.prizes li {
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    ul.prizes li strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1.05rem;
+      color: #000;
+    }
+
     @media (max-width: 700px) {
       .content {
         flex-direction: column;
@@ -81,7 +107,43 @@
 
       .poster {
         max-width: 100%;
-        margin: 0 auto;
+        margin: 0 auto 1rem;
+      }
+
+      .prizes li {
+        padding: 0.75rem; 
+      }
+
+      .text p {
+        margin-bottom: 1rem; 
+      }
+
+    }
+
+    @media (max-width: 400px) {
+      .prizes-section h1 {
+        font-size: 2rem;       
+        margin-bottom: 0.5rem; 
+      }
+
+      .prizes-section h2,
+      .prizes-section h2 + p {
+        font-size: 1.1rem;     
+        margin-bottom: 0.5rem;
+      }
+
+      .prizes li {
+        padding: 0.5rem;       
+        font-size: 0.95rem;    
+      }
+
+      form {
+        padding: 1rem;          
+      }
+
+      form button {
+        padding: 0.6rem;       
+        font-size: 0.95rem;
       }
     }
 
@@ -118,12 +180,8 @@
           Soutěž je v podobě jednoho <strong>online kola</strong>, které se koná <strong>v pátek, 3.10.2025</strong> <br> 
           a jednoho <strong>finálového kola</strong>, které proběhne <strong>v pátek, 10.10.2025</strong> v prostorách FJFI ČVUT.<br><br>
           <strong>Online kolo</strong> proběhne formou online testu, který bude dostupný od 3.10.2025 00:00 do 3.10.2025 23:59.  <br> 
-<<<<<<< HEAD
-          <strong>Vzorový řešený test</strong> s typovými příklady <a href="pdf/sbirka2.pdf" target="_blank">zde</a> <br><br>
-=======
           <strong>Vzorový řešený test</strong> s typovými příklady <a href="pdf/sbirka2.pdf" target="_blank">zde</a>. 
-          Zajímá nás váš názor! <a href="https://strawpoll.com/QrgewJel2ypL">Dotazník obtížnosti</a> <br><br> 
->>>>>>> ada4e63 (forcuju to bracho)
+          Zajímá nás váš názor! <a href="https://strawpoll.com/QrgewJel2yp">Dotazník obtížnosti</a> <br><br> 
           <strong>Finálové kolo</strong> proběhne formou živého klání v prostorách FJFI ČVUT.<br>
           <strong>Seznam 16 úspěšných řešitelů, postupující do finále bude vyvěšen <a href="https://integrationbeefjfi.com/">zde</a> v neděli, 5.10.2025</strong> <br>
         </p>
@@ -154,7 +212,7 @@
           <strong>Úspěšní řešitelé online kola obdrží pozvánku na finálové kolo emailem, kde závazně potvrdí svou účast.</strong>
           Pokud se z jakéhokoliv důvodu řešitel nemůže dostavit, postupuje automaticky první řešitel „pod čarou“.
           Průběh online kola bude modelován podle již existující <a href="https://www.youtube.com/watch?v=oR3lmIv7Ah8">MIT Integration Bee</a>.
-          Všechny možné úpravy a pravidla dostupné na této stránce 1.9.2025. 
+          Všechny možné úpravy a pravidla dostupné <a href="https://integrationbeefjfi.com/">zde</a>
           <br><br>
           <strong>Vašimi rozhodčími na prvním ročníku Integration Bee FJFI budou:</strong><br>
           dozvíte se 1.9.2025<br>
@@ -162,30 +220,33 @@
       </div>
     </div>
 
-    <div class="content" style="flex: 1 1 100%;">
+    <div class="content prizes-section" style="flex: 1 1 100%;">
       <div class="text">
-        <h1>Ceny</h1>
+        <h1>Hlavní a vedlejší ceny</h1>
         Generálním partnerem soutěže je <a href="https://qminers.com/cs/">Qminers</a>, který zajistil jak hladký průběh soutěže, tak i hlavní ceny.
         Dalšími sponzory jsou komerční firmy dlouhodobě spolupracující s FJFI <a href="https://advacam.com/">Advacam</a> a <a href="https://integrationbeefjfi.com/">Placeholder</a>,
-        kteří také nabízí ceny.<br><br>
+        kteří také nabízí atraktivní ceny.
+        <br>
         <h2>Hlavní ceny:</h2>
-         Všechny následující ceny jsou určeny pro první tři místa a budou předány na konci finálového kola.<br>
-        <ul>
-          <li><strong>Zlatý integrál:</strong> Pohár s motivem zlatého integrálu, který bude předán vítězi soutěže.</li><br>
-          <li><strong>Stáž v Qminers:</strong> Jednodenní stáž v Qminers nabízí jedinečnou příležitost setkat se s klíčovými členy týmu, nahlédnout do světa kvantitativního investování a seznámit se s principy, na nichž stojí moderní algoritmický trading.</li><br>
-          <li><strong>Stáž ve vědeckém oddělení Advacam:</strong> Jednodenní stáž ve vědeckém oddělení ADVACAM nabízí vhled do špičkového výzkumu v oblasti detekce záření a aplikované fyziky na pomezí vědy a průmyslu.</li> <br>
-          <li><strong>Stáž v TBD:</strong> TBD</li> <br>
-          <li><strong>Finanční odměna a dárkový box:</strong> Finanční odměna a dárkový box zajištený sponzory soutěže.</li>
+        <p>Všechny následující ceny jsou určeny pro první tři místa a budou předány na konci finálového kola.</p>
+        <ul class="prizes">
+          <li><strong>Zlatý integrál:</strong> Pohár s motivem zlatého integrálu, který bude předán vítězi soutěže.</li>
+          <li><strong>Stáž v Qminers:</strong> Jednodenní stáž v Qminers nabízí jedinečnou příležitost setkat se s klíčovými členy týmu, nahlédnout do světa kvantitativního investování a seznámit se s principy, na nichž stojí moderní algoritmický trading.</li>
+          <li><strong>Stáž ve vědeckém oddělení Advacam:</strong> Jednodenní stáž ve vědeckém oddělení ADVACAM nabízí vhled do špičkového výzkumu v oblasti detekce záření a aplikované fyziky na pomezí vědy a průmyslu.</li>
+          <li><strong>Stáž v TBD:</strong> TBD</li>
+          <li><strong>Finanční odměna a dárkový box:</strong> Finanční odměna a dárkový box zajištěný sponzory soutěže.</li>
+          <br>
         </ul>
         <h2>Vedlejší ceny:</h2>
-        Následující ceny jsou určeny pro všechny účastníky finálového kola.<br>
-        <ul>
-          <li><strong>Oficiální merchandising:</strong> Trička, mikiny, tašky FJFI zajištěné SU FJFI.</li><br>
-          <li><strong>Populárně naučná četba:</strong> Matematické knihy doporučené KM FJFI </li><br>
-          <li><strong>Certifikát:</strong> Pamětní certifikát potvrzující účast ve finále a ocenění mimořádného výkonu v soutěži</li><br>
-          </ul>
+        <p>Následující ceny jsou určeny pro všechny účastníky finálového kola.</p>
+        <ul class="prizes">
+          <li><strong>Oficiální merchandising:</strong> Trička, mikiny, tašky FJFI zajištěné SU FJFI.</li>
+          <li><strong>Populárně naučná četba:</strong> Matematické knihy doporučené KM FJFI</li>
+          <li><strong>Certifikát:</strong> Pamětní certifikát potvrzující účast ve finále a ocenění mimořádného výkonu v soutěži.</li>
+        </ul>
       </div>
     </div>
+
 
     <form
       action="https://formspree.io/f/xgvzyarw"
