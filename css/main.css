@@ -236,6 +236,30 @@ nav li a:hover {
     font-weight: bold;
   }
 }
+p {
+  font-size: 1.1em;
+  line-height: 1.8em;
+  color: #333333;
+  margin-bottom: 1.5em;
+}
+
+.features-section p {
+  color: white;
+}
+
+.hero .hero-cta p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #444444;
+}
+
+.testimonials-section p,
+.testimonials-section blockquote {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  color: white;
+}
+
 @media only screen and (min-width: 800px) {
   .container {
     width: 1080px;
@@ -322,4 +346,4 @@ nav li a:hover {
     left: 4.5em;
     top: 2em;
   }
-}/*# sourceMappingURL=zkouska_main.css.map */
+}/*# sourceMappingURL=main.css.map */
