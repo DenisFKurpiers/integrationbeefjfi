@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Bee FJFI – Finálové kolo</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#">integrationbee<span>fjfi</span>.com</a>
+            <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Menu Icon">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="close navigation">
+                <ul class="primary-nav">
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="online_kolo.html">Online Kolo</a></li>
+                    <li class="current"><a href="finalove_kolo.html">Finálové kolo</a></li>
+                    <li><a href="hlavni_ceny.html">Hlavní ceny</a></li>
+                    <li><a href="/images/Plakát.pdf" target="_blank">Plakát</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    
+    <section class="hero">
+        <div class="container">
+            <div class="left-col">
+                <p class="subhead">Fakulta jaderná a fyzikálně inženýrská</p>
+                <h1>Finálové kolo</h1>
+                <div class="hero-cta">
+                    <p>
+                        <strong>Pátek, 10. října 2025</strong><br>
+                        Finálové kolo proběhne formou <strong>živého klání</strong> v prostorách FJFI ČVUT.<br>
+                        Úspěšní řešitelé online kola obdrží pozvánku emailem a potvrdí svou účast.<br>
+                        Pokud se účastník nemůže dostavit, postupuje automaticky první řešitel „pod čarou“.<br><br>
+                        Soutěž bude inspirována <a href="https://www.youtube.com/watch?v=oR3lmIv7Ah8" 
+                        style="color:#F29200; text-decoration:underline;">MIT Integration Bee</a>, 
+                        s úpravami dle oficiálních <a href="https://integrationbeefjfi.com/" 
+                        style="color:#F29200; text-decoration:underline;">pravidel</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="features-section">
+        <div class="container">
+            <h2>Organizační informace</h2>
+            <p>
+                Soutěž je v podobě jednoho <strong>online kola</strong> (pátek, 3.10.2025)<br>
+                a jednoho <strong>finálového kola</strong> (pátek, 10.10.2025) v prostorách FJFI ČVUT.<br><br>
+
+            
+                Finálové kolo proběhne živě pod dohledem rozhodčích z KM FJFI.<br><br>
+
+                <strong>Seznam 16 úspěšných řešitelů, postupujících do finále, bude vyvěšen 
+                <a href="https://integrationbeefjfi.com/" style="color: #F29200;">zde</a> v neděli, 5.10.2025</strong>
+            </p>
+        </div>
+    </section>
+
+    
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom:2em;">Rozhodčí</h2>
+            <ul>
+                <li>
+                    <img src="images/porotce1.png" alt="Bc. Adam Blažek">
+                    <blockquote>Bc. Adam Blažek</blockquote>
+                </li>
+                <li>
+                    <img src="images/porotce2.png" alt="Mgr. Maksym Dreval">
+                    <blockquote>Mgr. Maksym Dreval</blockquote>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta');
+        nav = document.querySelector('nav');
+        mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        });
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        });
+    </script>
+</body>
+</html>

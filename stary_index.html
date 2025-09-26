@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integration Bee FJFI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: url("images/pozadi_silnejsi.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      font-family: "Open Sans", Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #000000;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #FFA000;
+      text-decoration: underline;
+    }
+
+    .content {
+      max-width: 900px;
+      min-width: 0;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap; 
+    }
+
+    .text {
+      flex: 1;
+      min-width: 250px; 
+    }
+
+    .text h1 {
+      margin-top: 0;
+      font-size: 2rem;
+      color: #000000;
+    }
+
+    .text h2 {
+      font-size: 1.2rem;
+      color: #000000;
+    }
+
+    .text p {
+      line-height: 1.5;
+    }
+
+    .poster {
+      max-width: 300px;
+      width: 100%;
+      height: auto; 
+      display: block;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .prizes-section h1,
+    .prizes-section h2 {
+      text-align: center;
+    }
+
+    .internships-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .internship-logo {
+      max-width: 120px;
+      height: auto;
+      display: block;
+      transition: transform 0.2s;
+      border-radius: 50%;
+    }
+
+    .internship-logo:hover {
+      transform: scale(1.1);
+    }
+
+    .prizes-section p {
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 700px) {
+      .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .poster {
+        max-width: 100%;
+        margin: 0 auto 1rem;
+      }
+
+      .text p {
+        margin-bottom: 1rem; 
+      }
+    }
+
+    @media (max-width: 400px) {
+      .prizes-section h1 {
+        font-size: 2rem;       
+        margin-bottom: 0.5rem; 
+      }
+
+      .prizes-section h2 {
+        font-size: 1.1rem;     
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    form input, form select, form textarea, form button {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    form button {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  
+  <div style="max-width: 900px; margin: 2rem auto; display: flex; gap: 2rem; flex-wrap: wrap;">
+
+    <div class="content" style="flex: 1 1 45%;">
+      <div class="text">
+        <h1>Integration Bee FJFI</h1>
+        <h2>Pořádá: KM FJFI</h2>
+        <p>
+          Máš na to porazit ostatní?<br>
+          Přihlaš se do matematické soutěže, kde rozhodují dovednosti, rychlost a chladná hlava.<br><br>
+          Poměř síly s nejlepšími studenty technických škol a získej nejen věcné ceny, ale i pozornost největších hráčů v oboru.
+        </p>
+      </div>
+      <img src="images/integration_pic.jpeg" alt="Poster for Integration Bee" class="poster">
+    </div>
+
+    <div class="content" style="flex: 1 1 100%;">
+      <div class="text">
+        <h1>Organizační informace</h1>
+        <p>
+          Soutěž je v podobě jednoho <strong>online kola</strong>, které se koná <strong>v pátek, 3.10.2025</strong> <br> 
+          a jednoho <strong>finálového kola</strong>, které proběhne <strong>v pátek, 10.10.2025</strong> v prostorách FJFI ČVUT.<br><br>
+
+          <a href="kola.html" 
+         style="padding:4px 8px; background:#FFA000; color:#fff; font-weight:bold; border-radius:4px; text-decoration:none; font-size:0.9em;">
+         Online kolo
+      </a>
+        &nbsp; proběhne formou online testu, který bude dostupný od 3.10.2025 00:00 do 3.10.2025 23:59. <br><br>
+      <a href="kola.html" 
+         style="padding:4px 8px; background:#FFA000; color:#fff; font-weight:bold; border-radius:4px; text-decoration:none; font-size:0.9em;">
+         Finálové kolo
+      </a>
+        &nbsp; proběhne formou živého klání v prostorách FJFI ČVUT pod dohledem odborných rozhodčích z KM FJFI.
+      <br><br>
+
+          <strong>Vzorový řešený test</strong> s typovými příklady <a href="pdf/sbirka5.pdf" target="_blank">zde</a>. 
+          Zajímá nás váš názor! <a href="https://strawpoll.com/QrgewJel2yp">Dotazník obtížnosti</a> <br><br> 
+          <strong>Seznam 16 úspěšných řešitelů, postupující do finále bude vyvěšen <a href="https://integrationbeefjfi.com/">zde</a> v neděli, 5.10.2025</strong> <br>
+        </p>
+      </div>
+    </div>
+
+    <div class="content prizes-section" style="flex: 1 1 100%;">
+      <div class="text">
+        <h1>Hlavní a vedlejší ceny</h1>
+        <p>
+          Generálním partnerem soutěže je <strong>Qminers</strong>, který zajistil jak hladký průběh soutěže, tak i finanční podporu.
+          Dalším sponzorem je komerční firma dlouhodobě spolupracující s FJFI <strong>Advacam</strong>,
+          která také věnovala atraktivní ceny pro vítěze.
+        </p>
+
+        <h2>Stáže</h2>
+        <p>První čtyři úspěšní řešitelé získají exkluzivní jednodenní stáže u všech sponzorů, osobně se setkají s klíčovými představiteli a budou mít jedinečnou příležitost vyniknout a ukázat svůj talent.</p>  
+
+        <div class="internships-logos">
+          <a href="https://qminers.com/cs/" target="_blank">
+            <img src="images/qminers-logo.png" alt="Qminers" class="internship-logo">
+          </a>
+          <a href="https://advacam.com/" target="_blank">
+            <img src="images/advacam-logo.png" alt="Advacam" class="internship-logo">
+          </a>
+        </div>
+        <br>
+        <p>
+         <h2>Finanční ceny</h2> 
+         <p>
+  Oba finalisté získají kromě nabídky stáží také finanční odměnu, jejíž výše se odvíjí od prestiže soutěže a zájmu sponzorů; garantovaný minimální obnos činí 
+  <span style="display: inline-block; background-color: #FFA000; color: #010101; padding: 0.2em 0.5em; border-radius: 5px; font-weight: bold; margin-left: 0.3em;">
+    5 000 Kč
+  </span>.
+      </div>
+    </div>
+
+    <form
+      action="https://formspree.io/f/xgvzyarw"
+      method="POST"
+      style="flex: 1 1 45%; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"
+    >
+      <h2 style="margin-top: 0; color: #000000;">Přihlašovací formulář</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <label>
+          Jméno:
+          <input type="text" name="name" required>
+        </label>
+
+        <label>
+          Email:
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          Věk:
+          <input type="number" name="age" min="10" max="100" required>
+        </label>
+
+        <label>
+          Status Studenta:
+          <select name="status" required>
+            <option value="" disabled selected>-- vyberte --</option>
+            <option value="highschool">Středoškolák</option>
+            <option value="college">Vysokoškolák</option>
+            <option value="other">Nejsem student</option>
+          </select>
+        </label>
+
+        <label>
+          Zpráva (volitelné):
+          <textarea name="message" rows="4"></textarea>
+        </label>
+
+        <button type="submit" style="background-color: #000000; color: white; padding: 0.75rem; border: none; border-radius: 5px; cursor: pointer;">
+          Odeslat nezávaznou přihlášku
+        </button>
+      </div>
+    </form>
+
+  </div>
+</body>
+</html>
+
+
