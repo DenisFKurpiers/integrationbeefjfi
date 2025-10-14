@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integration Bee FJFI – Previous Years</title>
+
+<!-- Link your main CSS which includes navbar + other styles -->
+<link rel="stylesheet" href="css/main.css">
+
+<style>
+/* Previous Years Section */
+.previous-years-section {
+    text-align: center;
+    padding: 5em 2em;
+}
+
+.previous-years-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.previous-years-section h2 {
+    font-size: 2em;
+    color: #F29200;
+    margin-bottom: 2em;
+}
+
+.previous-years-section .slideshow {
+    max-width: 700px;
+    margin: 0 auto 1.5em auto;
+    position: relative;
+    height: 400px; /* fixed height to prevent resizing during transitions */
+    overflow: hidden;
+}
+
+.previous-years-section .slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1em; /* slightly more rounded */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+}
+
+.previous-years-section .slideshow img.active {
+    display: block;
+    opacity: 1;
+}
+
+.previous-years-section .problem-set-link {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.6em 1.3em;
+    background: #F29200;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.previous-years-section .problem-set-link:hover {
+    background: #c87800;
+}
+
+/* Section backgrounds */
+.section-2025, .section-2024 {
+    background: #F29200;
+    color: white;
+}
+
+.section-2025 h2, .section-2024 h2 { color: white; }
+
+.section-2025 .problem-set-link, .section-2024 .problem-set-link {
+    background: white;
+    color: #F29200;
+}
+
+.section-2025 .problem-set-link:hover, .section-2024 .problem-set-link:hover {
+    background: #c87800;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 800px) {
+    .previous-years-section {
+        padding: 5em 1em;
+    }
+    .previous-years-section h2 {
+        font-size: 1.8em;
+    }
+    .previous-years-section .slideshow {
+        height: 250px;
+    }
+    .previous-years-section .slideshow img {
+        border-radius: 0.8em; /* slightly less on mobile for aesthetics */
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .previous-years-section .slideshow {
+        max-width: 900px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar relies on your working SCSS -->
+<div class="navbar">
+    <div class="container">
+        <a class="logo" href="#">integrationbee<span>fjfi</span>.com</a>
+        <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Menu Icon">
+        <nav>
+            <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Menu">
+            <ul class="primary-nav">
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="online_kolo.html">Online Kolo</a></li>
+                <li><a href="finalove_kolo.html">Finálové kolo</a></li>
+                <li><a href="hlavni_ceny.html">Hlavní ceny</a></li>
+                <li class="current"><a href="previous_years.html">Předchozí ročníky</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- 2025 Section -->
+<section class="previous-years-section section-2025">
+    <div class="container">
+        <h2>Integration Bee 2025</h2>
+        <div class="slideshow" id="slideshow-2025">
+            <img src="images/winners.jpg" alt="2025 photo 1" class="active">
+            <img src="images/sweats1.jpeg" alt="2025 photo 2">
+            <img src="images/sweats2.jpeg" alt="2025 photo 3">
+        </div>
+        <a href="images/finalni_prezentace.pptx" class="problem-set-link">Příklady 2025</a>
+    </div>
+</section>
+
+<!-- 2024 Section -->
+<section class="previous-years-section section-2024">
+    <div class="container">
+        <h2>Integration Bee 2024</h2>
+        <div class="slideshow" id="slideshow-2024">
+            <img src="images/comingsoon.png" alt="2024 photo 1" class="active">
+            <img src="images/comingsoon.png" alt="2024 photo 2">
+            <img src="images/comingsoon.png" alt="2024 photo 3">
+        </div>
+        <a href="#" class="problem-set-link">Příklady 2024</a>
+    </div>
+</section>
+
+<script>
+// Mobile menu toggle
+const mobileBtn = document.getElementById('mobile-cta');
+const nav = document.querySelector('nav');
+const mobileBtnExit = document.getElementById('mobile-exit');
+mobileBtn.addEventListener('click', () => nav.classList.add('menu-btn'));
+mobileBtnExit.addEventListener('click', () => nav.classList.remove('menu-btn'));
+
+// Slideshow init
+function initSlideshow(slideshowId) {
+    const container = document.getElementById(slideshowId);
+    const slides = container.querySelectorAll('img');
+    let index = 0;
+    setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+    }, 3000);
+}
+
+initSlideshow('slideshow-2025');
+initSlideshow('slideshow-2024');
+</script>
+
+</body>
+</html>
