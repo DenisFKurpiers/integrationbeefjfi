@@ -5,14 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Integration Bee FJFI – Previous Years</title>
 
-<!-- Link your main CSS which includes navbar + other styles -->
 <link rel="stylesheet" href="css/main.css">
 
 <style>
-/* Previous Years Section */
+/* --- Previous Years Section --- */
 .previous-years-section {
     text-align: center;
     padding: 5em 2em;
+    background: #f2f2f2;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 4em;
 }
 
 .previous-years-section .container {
@@ -21,9 +24,12 @@
     padding: 0 1em;
 }
 
+/* Heading same font and style as index headings, black */
 .previous-years-section h2 {
-    font-size: 2em;
-    color: #F29200;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 2.5em;
     margin-bottom: 2em;
 }
 
@@ -31,32 +37,33 @@
     max-width: 700px;
     margin: 0 auto 1.5em auto;
     position: relative;
-    height: 400px; /* fixed height to prevent resizing during transitions */
+    height: 400px;
     overflow: hidden;
+    border-radius: 1em;
+    box-shadow:  0 8px 20px rgba(0,0,0,0.15);
+    background: #f2f2f2;
 }
 
 .previous-years-section .slideshow img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1em; /* slightly more rounded */
-    display: none;
+    border-radius: 1em;
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity 0.5s ease;
+    display: none; /* no transition */
 }
 
 .previous-years-section .slideshow img.active {
-    display: block;
-    opacity: 1;
+    display: block; /* switch instantly */
 }
 
 .previous-years-section .problem-set-link {
     display: inline-block;
     margin-top: 1em;
     padding: 0.6em 1.3em;
-    background: #F29200;
+    background: #FFA000;
     color: white;
     text-decoration: none;
     font-weight: 700;
@@ -66,39 +73,23 @@
 
 .previous-years-section .problem-set-link:hover {
     background: #c87800;
-}
-
-/* Section backgrounds */
-.section-2025, .section-2024 {
-    background: #F29200;
     color: white;
 }
 
-.section-2025 h2, .section-2024 h2 { color: white; }
-
-.section-2025 .problem-set-link, .section-2024 .problem-set-link {
-    background: white;
-    color: #F29200;
-}
-
-.section-2025 .problem-set-link:hover, .section-2024 .problem-set-link:hover {
-    background: #c87800;
-    color: white;
-}
-
-/* Responsive adjustments */
 @media only screen and (max-width: 800px) {
     .previous-years-section {
-        padding: 5em 1em;
+        padding: 3em 1em;
     }
     .previous-years-section h2 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
     .previous-years-section .slideshow {
         height: 250px;
+        border-radius: 0.8em;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .previous-years-section .slideshow img {
-        border-radius: 0.8em; /* slightly less on mobile for aesthetics */
+        border-radius: 0.8em;
     }
 }
 
@@ -111,7 +102,7 @@
 </head>
 <body>
 
-<!-- Navbar relies on your working SCSS -->
+<!-- Navbar -->
 <div class="navbar">
     <div class="container">
         <a class="logo" href="#">integrationbee<span>fjfi</span>.com</a>
@@ -138,14 +129,14 @@
             <img src="images/sweats1.jpeg" alt="2025 photo 2">
             <img src="images/sweats2.jpeg" alt="2025 photo 3">
         </div>
-        <a href="images/finalni_prezentace.pptx" class="problem-set-link">Příklady 2025</a>
+        <a href="images/finalni prezentace.pptx" class="problem-set-link">Příklady 2025</a>
     </div>
 </section>
 
 <!-- 2024 Section -->
 <section class="previous-years-section section-2024">
     <div class="container">
-        <h2>Integration Bee 2024</h2>
+        <h2>Integration Bee 2026</h2>
         <div class="slideshow" id="slideshow-2024">
             <img src="images/comingsoon.png" alt="2024 photo 1" class="active">
             <img src="images/comingsoon.png" alt="2024 photo 2">
@@ -163,7 +154,7 @@ const mobileBtnExit = document.getElementById('mobile-exit');
 mobileBtn.addEventListener('click', () => nav.classList.add('menu-btn'));
 mobileBtnExit.addEventListener('click', () => nav.classList.remove('menu-btn'));
 
-// Slideshow init
+// Slideshow with instant switch (no transition)
 function initSlideshow(slideshowId) {
     const container = document.getElementById(slideshowId);
     const slides = container.querySelectorAll('img');
@@ -172,7 +163,7 @@ function initSlideshow(slideshowId) {
         slides[index].classList.remove('active');
         index = (index + 1) % slides.length;
         slides[index].classList.add('active');
-    }, 3000);
+    }, 3000); // images switch instantly every 3s
 }
 
 initSlideshow('slideshow-2025');
