@@ -362,7 +362,7 @@ p {
             margin: 0 1em;
         }
     }
-
+    
     .form {
         position: relative;
 
@@ -407,6 +407,12 @@ p {
             top: 2em; 
         }
     }
+}
+
+@media only screen and (max-width: 799px) {
+    .features-section {
+        min-height: 100vh;
+  }
 }
 
 
