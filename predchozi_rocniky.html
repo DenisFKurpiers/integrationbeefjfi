@@ -40,7 +40,7 @@
     height: 400px;
     overflow: hidden;
     border-radius: 1em;
-    box-shadow:  0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     background: #f2f2f2;
 }
 
@@ -74,6 +74,26 @@
 .previous-years-section .problem-set-link:hover {
     background: #c87800;
     color: white;
+}
+
+/* --- Winners text --- */
+.previous-years-section .winners {
+    margin-top: 1.5em;
+    font-size: 1.1em;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+/* Klikací slideshow */
+.slideshow-link {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.slideshow-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 @media only screen and (max-width: 800px) {
@@ -125,25 +145,51 @@
 <section class="previous-years-section section-2025">
     <div class="container">
         <h2>Integration Bee 2025</h2>
-        <div class="slideshow" id="slideshow-2025">
-            <img src="images/winners.jpg" alt="2025 photo 1" class="active">
-            <img src="images/sweats1.jpeg" alt="2025 photo 2">
-            <img src="images/sweats2.jpeg" alt="2025 photo 3">
-        </div>
+
+        <!-- Klikací slideshow -->
+        <a href="https://drive.google.com/drive/folders/1OYizYAxMZDtXlNTnRcn-5NpjnIa7ji_u?usp=sharing" target="_blank" class="slideshow-link">
+            <div class="slideshow" id="slideshow-2025">
+                <img src="images/winners.jpg" alt="2025 photo 1" class="active">
+                <img src="images/sweats1.jpeg" alt="2025 photo 2">
+                <img src="images/sweats2.jpeg" alt="2025 photo 3">
+                <img src="images/sweats3.jpeg" alt="2025 photo 4">
+                <img src="images/sweats4.jpeg" alt="2025 photo 5">
+                <img src="images/sweats5.jpeg" alt="2025 photo 6">
+
+            </div>
+        </a>
+
+        <!-- Vítězové -->
+        <p class="winners">
+            🥇 Michal Janík (MFF) &nbsp;&nbsp; 🥈 Ondřej Koucký (MFF) &nbsp;&nbsp; 🥉 Matyáš Rozínek (FJFI) &nbsp;&nbsp; 🎖️ Adam Vyšínský (FJFI)
+        </p>
+
         <a href="images/finalni prezentace.pptx" class="problem-set-link">Příklady 2025</a>
+
     </div>
 </section>
 
-<!-- 2024 Section -->
+<!-- 2026 Section -->
 <section class="previous-years-section section-2026">
     <div class="container">
         <h2>Integration Bee 2026</h2>
-        <div class="slideshow" id="slideshow-2024">
-            <img src="images/comingsoon.png" alt="2024 photo 1" class="active">
-            <img src="images/comingsoon.png" alt="2024 photo 2">
-            <img src="images/comingsoon.png" alt="2024 photo 3">
-        </div>
+
+        <!-- Klikací slideshow -->
+        <a href="https://drive.google.com/drive/folders/YOUR_2026_FOLDER_LINK" target="_blank" class="slideshow-link">
+            <div class="slideshow" id="slideshow-2026">
+                <img src="images/comingsoon.png" alt="2026 photo 1" class="active">
+                <img src="images/comingsoon.png" alt="2026 photo 2">
+                <img src="images/comingsoon.png" alt="2026 photo 3">
+            </div>
+        </a>
+
+        <!-- Vítězové -->
+        <p class="winners">
+            🥇 Bude oznámeno po finále
+        </p>
+
         <a href="#" class="problem-set-link">Příklady 2026</a>
+
     </div>
 </section>
 
@@ -155,7 +201,7 @@ const mobileBtnExit = document.getElementById('mobile-exit');
 mobileBtn.addEventListener('click', () => nav.classList.add('menu-btn'));
 mobileBtnExit.addEventListener('click', () => nav.classList.remove('menu-btn'));
 
-// Slideshow with instant switch (no transition)
+// Slideshow with instant switch
 function initSlideshow(slideshowId) {
     const container = document.getElementById(slideshowId);
     const slides = container.querySelectorAll('img');
@@ -164,11 +210,11 @@ function initSlideshow(slideshowId) {
         slides[index].classList.remove('active');
         index = (index + 1) % slides.length;
         slides[index].classList.add('active');
-    }, 3000); // images switch instantly every 3s
+    }, 3000);
 }
 
 initSlideshow('slideshow-2025');
-initSlideshow('slideshow-2024');
+initSlideshow('slideshow-2026');
 </script>
 
 </body>
