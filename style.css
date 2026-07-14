@@ -1,20 +1,27 @@
 :root {
-    --primary-blue: #004488; 
-    --secondary-blue: #0066cc; 
-    --light-blue: #f0f8ff; 
-    --border-blue: #bbddff;
-    --text-main: #333333;
+    /* Oficiální moderní modrá FJFI */
+    --primary-blue: #0065BD; 
+    --secondary-blue: #008080; /* Teal akcent z LaTeXu */
+    --light-blue: #F8F9FA;     /* Čisté, velmi světlé pozadí z LaTeXu */
+    --border-blue: #e5e5e5;    /* Minimalistická jemná šedá namísto modrých čar */
+    --text-main: #1a1a1a;      /* Moderní temně šedá */
     --bg-white: #ffffff;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    /* Bezpatkové moderní písmo s větším rozestupem (whitespace) */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.8;
     color: var(--text-main);
     background-color: var(--bg-white);
-    max-width: 900px;
+    max-width: 800px; /* Mírně zúženo pro lepší čitelnost na šířku */
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 24px; /* Větší horní/dolní odsazení */
+}
+
+/* Odsazení jednotlivých sekcí na webu pro maximální vzdušnost */
+section {
+    margin-bottom: 60px;
 }
 
 ul {
@@ -22,72 +29,91 @@ ul {
     padding-left: 0;     
 }
 
+/* Přidání rozestupů mezi položkami v seznamech */
+ul li {
+    margin-bottom: 12px;
+}
+
 h1, h2, h3 {
     color: var(--primary-blue);
+    font-weight: 700;
 }
 
 h1 {
+    font-size: 2.8em; /* Výrazný moderní nadpis */
     text-align: center;
-    border-bottom: 2px solid var(--primary-blue);
-    padding-bottom: 15px;
-    margin-bottom: 30px;
+    border-bottom: none; /* Odstraněna těžká čára pro čistý minimalismus */
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
 }
 
 a {
-    color: var(--secondary-blue);
+    color: var(--primary-blue);
     text-decoration: none;
     font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--primary-blue);
+    border-bottom: 1px solid var(--primary-blue); /* Elegantní hover efekt */
 }
 
+/* Matematický box pro integrály - čistý bezpatkový styl bez těžkého ohraničení */
 .math-box {
     background-color: var(--light-blue);
-    border-left: 5px solid var(--primary-blue);
-    padding: 15px;
-    margin: 20px 0;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 1.1em;
+    border-left: none; /* Odstraněna tlustá modrá čára */
+    border-radius: 8px;
+    padding: 24px;
+    margin: 30px 0;
+    text-align: center; /* Vycentrování integrálů */
 }
 
+/* Minimalistická úprava tabulek (styl "booktabs" z LaTeXu) */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 th, td {
-    border: 1px solid var(--border-blue);
-    padding: 10px 15px;
+    border: none; /* Úplné zrušení svislých i vodorovných vnitřních mřížek */
+    border-bottom: 1px solid var(--border-blue); /* Pouze jemná spodní linka */
+    padding: 14px 18px;
     text-align: left;
 }
 
 th {
-    background-color: var(--light-blue);
+    background-color: transparent; /* Žádné barevné pozadí záhlaví */
     color: var(--primary-blue);
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-blue); /* Výraznější linka pod hlavičkou */
 }
 
 tr:nth-child(even) {
-    background-color: #fafcff;
+    background-color: transparent; /* Odstraněno střídání řádků pro čistší look */
 }
 
 .notice {
-    background-color: #e6f2ff;
+    background-color: var(--light-blue);
     border: 1px solid var(--border-blue);
-    padding: 15px;
-    border-radius: 5px;
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
-    color: var(--primary-blue);
+    color: var(--text-main);
 }
 
 
-/* Flexible Logo Grid for Backing & Sponsorships */
+/* Flexible Logo Grid for Backing & Sponsorships - Zjemnění */
 .logo-grid {
     display: grid;
-    /* Automatically creates columns based on available space */
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
     gap: 20px;
     margin-top: 25px;
@@ -95,25 +121,22 @@ tr:nth-child(even) {
 
 .logo-item {
     background-color: var(--light-blue);
-    border: 2px dashed var(--border-blue);
-    border-radius: 6px;
+    border: 1px solid var(--border-blue); /* Nahrazeno tenkou plnou čarou místo přerušované */
+    border-radius: 8px;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-blue);
-    font-weight: 600;
-    font-size: 0.9em;
     transition: all 0.2s ease;
 }
 
 .logo-item:hover {
     border-color: var(--primary-blue);
-    background-color: #e6f2ff;
+    background-color: #f1f5f9;
 }
 
 .logo-item img {
-    max-width: 85%;
-    max-height: 85%;
+    max-width: 80%;
+    max-height: 80%;
     object-fit: contain;
 }
