@@ -104,7 +104,7 @@ tr:nth-child(even) {
 .notice {
     background-color: var(--light-blue);
     border: 1px solid var(--border-blue);
-    padding: 20px;
+    padding: 20px 30px;
     border-radius: 8px;
     text-align: center;
     color: var(--text-main);
@@ -139,4 +139,28 @@ tr:nth-child(even) {
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
+}
+
+/* --- NOVÉ: Luma Button Styling --- */
+a.luma-checkout--button {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.05em;
+    text-decoration: none;
+    margin-top: 15px;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 101, 189, 0.15);
+}
+
+a.luma-checkout--button:hover {
+    background-color: #005096; /* Tmavší modrá FJFI při najetí */
+    color: var(--bg-white);
+    border-bottom: none; /* Odstraní defaultní čáru při najetí z a:hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 101, 189, 0.2);
 }
