@@ -14,6 +14,8 @@
             margin: 20px 0;
         }
         .photo {
+            position: relative;
+            overflow: hidden;
             height: 200px;
             border-radius: 6px;
             cursor: pointer;
@@ -27,11 +29,7 @@
             box-shadow: 0 4px 12px rgba(0,68,136,0.15);
         }
         /* Miniatura videa */
-        .photo.is-video {
-            position: relative;
-            overflow: hidden;
-            background: #000;
-        }
+        .photo.is-video { background: #000; }
         .photo.is-video video {
             width: 100%;
             height: 100%;
@@ -49,6 +47,19 @@
             color: white;
             font-size: 2.5rem;
             text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+            pointer-events: none;
+        }
+        /* Překryv "+N" na poslední miniatuře */
+        .more-count {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.55);
+            color: white;
+            font-size: 2.2rem;
+            font-weight: bold;
             pointer-events: none;
         }
 
@@ -71,6 +82,15 @@
         .lb-close { top: 20px; right: 20px; }
         .lb-prev { left: 20px; }
         .lb-next { right: 20px; }
+        .lb-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
 
         /* Styl pro seznam finalistů */
         .participants-list {
@@ -159,8 +179,7 @@
 
     <section>
         <h2>Fotogalerie</h2>
-        <p>Kliknutím na fotografii nebo video otevřete náhled:</p>
-        <!-- Miniatury se vygenerují automaticky ze seznamu "media" níže -->
+        <p>Kliknutím na fotografii otevřete náhled, kde si můžete prohlédnout všechny fotky a videa:</p>
         <div class="gallery-duo" id="gallery"></div>
     </section>
 
@@ -193,11 +212,11 @@
         <img id="lb-canvas" class="lb-img" src="" alt="Náhled fotografie">
         <video id="lb-video" class="lb-video" controls playsinline style="display:none;"></video>
         <button class="lb-btn lb-next" onclick="moveLightbox(1, event)">&#10095;</button>
+        <div id="lb-counter" class="lb-counter"></div>
     </div>
 
     <script>
-        // JEDINÝ seznam fotek a videí – pořadí = pořadí v galerii i v lightboxu.
-        // Stačí sem přidat/odebrat řádek.
+        // Seznam VŠECH fotek a videí – v lightboxu se dá listovat všemi.
         const media = [
             'images/winners4.jpeg',
             'images/winners5.jpeg',
@@ -207,16 +226,20 @@
             'images/winners9.mov'
         ];
 
+        // Kolik miniatur se zobrazí přímo na stránce (zbytek je dostupný po rozkliknutí)
+        const PREVIEW_COUNT = 2;
+
         const isVideo = (src) => /\.(mp4|mov|m4v|webm)$/i.test(src);
 
         let currentIdx = 0;
         const lb = document.getElementById('lightbox');
         const lbImg = document.getElementById('lb-canvas');
         const lbVideo = document.getElementById('lb-video');
+        const lbCounter = document.getElementById('lb-counter');
         const gallery = document.getElementById('gallery');
 
-        // Vygenerování miniatur
-        media.forEach((src, i) => {
+        // Vygenerování náhledových miniatur (jen prvních PREVIEW_COUNT)
+        media.slice(0, PREVIEW_COUNT).forEach((src, i) => {
             const item = document.createElement('div');
             item.className = 'photo';
             item.onclick = () => openLightbox(i);
@@ -224,7 +247,7 @@
             if (isVideo(src)) {
                 item.classList.add('is-video');
                 const v = document.createElement('video');
-                v.src = src + '#t=0.1';   // zobrazí první snímek jako náhled
+                v.src = src + '#t=0.1';
                 v.muted = true;
                 v.preload = 'metadata';
                 v.playsInline = true;
@@ -232,12 +255,23 @@
             } else {
                 item.style.backgroundImage = "url('" + src + "')";
             }
+
+            // Na poslední miniatuře ukázat, kolik dalších položek je ve složce
+            const hidden = media.length - PREVIEW_COUNT;
+            if (i === PREVIEW_COUNT - 1 && hidden > 0) {
+                const more = document.createElement('div');
+                more.className = 'more-count';
+                more.textContent = '+' + hidden;
+                item.appendChild(more);
+            }
+
             gallery.appendChild(item);
         });
 
         function showCurrent() {
             const src = media[currentIdx];
             lbVideo.pause();
+            lbCounter.textContent = (currentIdx + 1) + ' / ' + media.length;
 
             if (isVideo(src)) {
                 lbImg.style.display = 'none';
